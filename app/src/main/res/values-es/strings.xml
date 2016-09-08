@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LFA</string>
+
+    <string name="empty"></string>
+
+    <string name="condors">Condors</string>
+    <string name="eagles">Eagles</string>
+    <string name="mayas">Mayas</string>
+    <string name="raptors">Raptors</string>
+
+    <!-- usar en caso de acento o ñ: -->
+    <!--Á	\u00C1	A con acento
+        á	\u00E1	a con acento
+        É	\u00C9	E con acento
+        é	\u00E9	e con acento
+        Í	\u00CD	I con acento
+        í	\u00ED	i con acento
+        Ó	\u00D3	O con acento
+        ó	\u00F3	o con acento
+        Ú	\u00DA	U con acento
+        ú	\u00FA	u con acento
+        Ü	\u00DC	U con dieress
+        ü	\u00FC	u con dieresis
+        ñ 	\u00F1	n con tilde
+        Ñ   \u00D1  N con tilde -->
+    <!-- usar en caso de acento o ñ: -->
+
+    <string name="top_stories">Noticias</string>
+
+    <string name="home">Inicio</string>
+    <string name="teams">Equipos</string>
+    <string name="schedule">Calendario</string>
+    <string name="standings">Standings</string>
+    <string name="estadisticas">Estad\u00EDsticas</string>
+    <string name="reglamento">Reglamento</string>
+    <string name="acerca_de">Acerca de...</string>
+    <string name="action_settings">Ajustes</string>
+
+    <string name="acerca_de_info">Esta aplicaci\u00F3n es la que me sacara de la carrera de la rata porque ya estoy hasta la madre!</string>
+    <string name="idioma_app">Idioma</string>
+    <string name="selecciona_idioma">Selecciona idioma</string>
+    <string name="espannol">Espa\u00F1ol</string>
+    <string name="ingles">English</string>
+</resources>

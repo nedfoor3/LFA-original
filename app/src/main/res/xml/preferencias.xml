@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="preferencias_principal"
+    >
+    <ListPreference
+        android:key="idiomas_select"
+        android:title="@string/idioma_app"
+        android:summary="@string/selecciona_idioma"
+        android:entries="@array/lenguajes"
+        android:entryValues="@array/lenguajesOrden"
+        android:defaultValue="0"/>
+</PreferenceScreen>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="negro">#000000</color>
+    <color name="blanco">#FFFFFF</color>
+
+    <color name="gris">#333333</color>
+    <color name="verde_web">#58b604</color>
+    <color name="rojo_web">#d10000</color>
+
+    <color name="verde_logo_lfa">#00742D</color>
+    <color name="verde_logo_lfa_dark">#035C25</color>
+    <color name="rojo_logo_lfa">#A51016</color>
+    <color name="azul_maya">#002747</color>
+    <color name="rojo_aguila">#c12439</color>
+    <color name="dorado_condor">#c5af73</color>
+    <color name="verde_raptor">#0f5b42</color>
+    <color name="dorado_raptor">#C6AF72</color>
+</resources>

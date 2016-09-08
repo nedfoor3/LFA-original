@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/verde_logo_lfa"
+        android:id="@+id/main_toolbar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:src="@drawable/logo_lfa_sin_texto"
+            android:layout_gravity="center_horizontal"/>
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@color/blanco">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/azul_maya"
+            android:id="@+id/top_stories_recycler">
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+<android.support.v4.widget.DrawerLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".MainActivity">
+    <!--<include layout="@layout/toolbar"></include>-->
+
+
+
+
+
+
+
+
+    <ListView
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_sliding_menu"
+        android:choiceMode="singleChoice"
+        android:background="@color/verde_logo_lfa"
+        android:layout_gravity="start"
+        android:layout_marginTop="?attr/actionBarSize"></ListView>
+
+</android.support.v4.widget.DrawerLayout>
+</RelativeLayout>
