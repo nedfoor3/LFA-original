@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         listSliding.add(new ItemSlideMenu(R.drawable.ic_player, getResources().getString(R.string.teams)));
         listSliding.add(new ItemSlideMenu(R.drawable.ic_calendar_time, getResources().getString(R.string.schedule)));
         listSliding.add(new ItemSlideMenu(R.drawable.ic_football_play, getResources().getString(R.string.standings)));
-        listSliding.add(new ItemSlideMenu(R.drawable.ic_first_down_mark, getResources().getString(R.string.estadisticas)));
+        listSliding.add(new ItemSlideMenu(R.drawable.ic_first_down_mark, getResources().getString(R.string.estadisticas)+ " " + getResources().getString(R.string.construyendo)));
         listSliding.add(new ItemSlideMenu(R.drawable.ic_referee, getResources().getString(R.string.reglamento)));
         listSliding.add(new ItemSlideMenu(R.drawable.ic_info, getResources().getString(R.string.acerca_de)));
         //listSliding.add(new ItemSlideMenu(R.drawable.ic_engranes, getResources().getString(R.string.action_settings)));
