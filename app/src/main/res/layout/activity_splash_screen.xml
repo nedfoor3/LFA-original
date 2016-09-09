@@ -20,11 +20,4 @@
         android:scaleX=".85"
         android:scaleY=".85"/>
 
-    <ImageView
-        android:id="@+id/imagen_logo_titan"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_titan"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
 </RelativeLayout>

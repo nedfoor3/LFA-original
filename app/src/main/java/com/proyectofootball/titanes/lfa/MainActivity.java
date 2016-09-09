@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         listSliding.add(new ItemSlideMenu(R.drawable.ic_first_down_mark, getResources().getString(R.string.estadisticas)));
         listSliding.add(new ItemSlideMenu(R.drawable.ic_referee, getResources().getString(R.string.reglamento)));
         listSliding.add(new ItemSlideMenu(R.drawable.ic_info, getResources().getString(R.string.acerca_de)));
-        listSliding.add(new ItemSlideMenu(R.drawable.ic_engranes, getResources().getString(R.string.action_settings)));
+        //listSliding.add(new ItemSlideMenu(R.drawable.ic_engranes, getResources().getString(R.string.action_settings)));
         adapter = new SlidingMenuAdapter(this, listSliding);
         listViewSliding.setAdapter(adapter);
 

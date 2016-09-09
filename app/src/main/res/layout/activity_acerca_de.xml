@@ -12,13 +12,14 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="#333333"
         tools:context="com.proyectofootball.">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/acerca_de_info"
+            android:text="@string/empty"
             android:id="@+id/textView"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
@@ -26,8 +27,53 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="soporte@rawrstudio.com"
-            android:id="@+id/contacto_rawr"/>
+            android:text="@string/rawr_studio"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/contacto_rawr"
+            android:layout_below="@+id/tv_develop"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/blanco"
+            android:textSize="35dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/developed_by"
+            android:id="@+id/tv_develop"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="6dp"
+            android:textSize="30dp"/>
+
+        <ImageView
+            android:id="@+id/imagen_logo_titan"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_titan"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_logo_head"
+            android:src="@drawable/logo_head"
+            android:layout_above="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:scaleX="1.5"
+            android:scaleY="1.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/acerca_de_texto"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/textView"
+            android:textColor="@color/blanco"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
 </FrameLayout>

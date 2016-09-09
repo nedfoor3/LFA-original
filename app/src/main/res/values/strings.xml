@@ -27,10 +27,13 @@
     <string name="schedule">Schedule</string>
     <string name="standings">Standings</string>
     <string name="title_activity_main2" translatable="false">Main2Activity</string>
+    <string name="acerca_de_texto">Information and logos are informative content looking to promote Football in Mexico.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="title_activity_detalle_equipos" translatable="false">DetalleEquipos</string>
+    <string name="developed_by">Developed by:</string>
+    <string name="rawr_studio">Rawr Studio</string>
     <string name="large_text" translatable="false">
         "Material is the metaphor.\n\n"
 
@@ -120,5 +123,6 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
 
 </resources>
