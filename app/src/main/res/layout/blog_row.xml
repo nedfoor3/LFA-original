@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginTop="3dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:background="@color/blanco"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        android:background="@color/rojo_logo_lfa"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_image"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:background="@color/blanco"
+            android:src="@drawable/ic_stat_silueta_logo_para_notificacion"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/negro"
+            android:text="el titulo va aqui"
+            android:background="@color/blanco"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/rojo_logo_lfa"></RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_text"
+            android:background="@color/blanco"
+            android:textColor="@color/negro"
+            android:text="nota va aqui"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:ellipsize="end"
+            android:maxLines="2" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
