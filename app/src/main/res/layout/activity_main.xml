@@ -18,33 +18,19 @@
             android:layout_gravity="center_horizontal"/>
     </android.support.v7.widget.Toolbar>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/main_content"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:background="@color/blanco">
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/azul_maya"
-            android:id="@+id/top_stories_recycler">
-        </android.support.v7.widget.RecyclerView>
-    </RelativeLayout>
 
-<android.support.v4.widget.DrawerLayout
+    <android.support.v4.widget.DrawerLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     tools:context=".MainActivity">
-    <!--<include layout="@layout/toolbar"></include>-->
 
-
-
-
-
-
-
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blanco"
+            android:id="@+id/blog_list"
+            android:layout_marginTop="?attr/actionBarSize"></android.support.v7.widget.RecyclerView>
 
     <ListView
         android:layout_width="250dp"
@@ -56,4 +42,8 @@
         android:layout_marginTop="?attr/actionBarSize"></ListView>
 
 </android.support.v4.widget.DrawerLayout>
+
+
+
+
 </RelativeLayout>

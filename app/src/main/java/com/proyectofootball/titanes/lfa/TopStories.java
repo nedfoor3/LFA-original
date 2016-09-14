@@ -20,7 +20,7 @@ public class TopStories extends AppCompatActivity {
    // @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.activity_top_stories, container, false);
-        recyclerNoticias = (RecyclerView) layout.findViewById(R.id.top_stories_recycler);
+        //recyclerNoticias = (RecyclerView) layout.findViewById(R.id.top_stories_recycler);
     return layout;
     }
     @Override

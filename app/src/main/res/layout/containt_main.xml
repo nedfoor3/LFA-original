@@ -5,11 +5,4 @@
     android:layout_height="match_parent"
     android:background="#946B37">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageDefault"
-        android:src="@drawable/are_you_ready"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>

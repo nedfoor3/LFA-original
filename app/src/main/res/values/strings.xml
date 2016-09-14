@@ -34,6 +34,7 @@
     <string name="title_activity_detalle_equipos" translatable="false">DetalleEquipos</string>
     <string name="developed_by">Developed by:</string>
     <string name="rawr_studio">Rawr Studio</string>
+    <string name="probando">Testing</string>
     <string name="large_text" translatable="false">
         "Material is the metaphor.\n\n"
 

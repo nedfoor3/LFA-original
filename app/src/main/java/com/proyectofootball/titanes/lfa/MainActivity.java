@@ -1,6 +1,7 @@
 package com.proyectofootball.titanes.lfa;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
@@ -8,19 +9,35 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.proyectofootball.titanes.lfa.adapter.SlidingMenuAdapter;
+import com.proyectofootball.titanes.lfa.model.Blog;
 import com.proyectofootball.titanes.lfa.model.ItemSlideMenu;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,17 +45,26 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private List<ItemSlideMenu> listSliding;
     private SlidingMenuAdapter adapter;
-    private ListView listViewSliding;
+    private ListView listViewSliding, listViewNoticias;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     public Toolbar toolbarParaLogo;
-    private RecyclerView recyclerNoticias;
+    private RecyclerView mBlogList;
+    private Button pruebaFireBase;
+    private Firebase mRefNoticias, mRootRef;
+    private TextView tvFire, tvNoticias;
+    private DatabaseReference mDadabaseReference;
     //public ActionBar actionnBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mDadabaseReference = FirebaseDatabase.getInstance().getReference().child("/2016/Noticias");
+        mBlogList = (RecyclerView) findViewById(R.id.blog_list);
+        mBlogList.setHasFixedSize(true);
+        mBlogList.setLayoutManager(new LinearLayoutManager(this));
 
         listViewSliding = (ListView)findViewById(R.id.lv_sliding_menu);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -52,12 +78,12 @@ public class MainActivity extends AppCompatActivity {
         listSliding.add(new ItemSlideMenu(R.drawable.ic_first_down_mark, getResources().getString(R.string.estadisticas)+ " " + getResources().getString(R.string.construyendo)));
         listSliding.add(new ItemSlideMenu(R.drawable.ic_referee, getResources().getString(R.string.reglamento)));
         listSliding.add(new ItemSlideMenu(R.drawable.ic_info, getResources().getString(R.string.acerca_de)));
-        //listSliding.add(new ItemSlideMenu(R.drawable.ic_engranes, getResources().getString(R.string.action_settings)));
+        //listSliding.add(new ItemSlideMenu(R.drawable.ic_engranes, getResources().getString(R.string.probando)));
         adapter = new SlidingMenuAdapter(this, listSliding);
         listViewSliding.setAdapter(adapter);
 
         toolbarParaLogo = (Toolbar)findViewById(R.id.main_toolbar);
-        recyclerNoticias = (RecyclerView)findViewById(R.id.top_stories_recycler);
+        //recyclerNoticias = (RecyclerView)findViewById(R.id.top_stories_recycler);
         listViewSliding.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -98,7 +124,82 @@ public class MainActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
 
 
+ /*       pruebaFireBase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Firebase mRefChild = mRef.child("Test");
+                mRefChild.setValue("a huevo cabron");
+                Toast.makeText(MainActivity.this, "no me chingues", Toast.LENGTH_SHORT).show();
+            }
+        });*/
+/*
+        mRootRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String valueRead = dataSnapshot.getValue(String.class);
+                tvFire.setText(valueRead);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });*/
+
     }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        FirebaseRecyclerAdapter<Blog, BlogViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blog, BlogViewHolder>(
+                Blog.class,
+                R.layout.blog_row,
+                BlogViewHolder.class,
+                mDadabaseReference
+
+        ) {
+            @Override
+            protected void populateViewHolder(BlogViewHolder viewHolder, Blog model, int position) {
+                viewHolder.setTitleNota(model.getEncabezadoNota());
+                viewHolder.setCuerpoNota(model.getTextoNota());
+                viewHolder.setImagenNota(getApplicationContext(), model.getImagenNota());
+
+            }
+        };
+        mBlogList.setAdapter(firebaseRecyclerAdapter);
+    }
+
+    public static class BlogViewHolder extends RecyclerView.ViewHolder{
+        View mView;
+        public BlogViewHolder(View itemView) {
+            super(itemView);
+             mView = itemView;
+        }
+        public void setTitleNota(String titleNota) {
+            TextView post_title = (TextView)mView.findViewById(R.id.post_title);
+            post_title.setText(titleNota);
+
+        }
+        public void setCuerpoNota(String textoNota){
+            TextView post_cuerpo = (TextView)mView.findViewById(R.id.post_text);
+            post_cuerpo.setText(textoNota);
+
+        }
+
+        public void setImagenNota(Context ctx, String imagenNota) {
+            ImageView post_image = (ImageView)mView.findViewById(R.id.post_image);
+            Picasso.with(ctx).load(imagenNota).into(post_image);
+
+
+
+
+        }
+    }
+    /*public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_detalle_equipos, menu);
+        return super.onCreateOptionsMenu(menu);
+    }*/
 /*
     //@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -168,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(acercaDeIntent);
                 break;
             case 7:
-                Intent preferenciasIntent = new Intent(this, Preferencias.class);
+                Intent preferenciasIntent = new Intent(this, ParaPruebas.class);
                 startActivity(preferenciasIntent);
                 break;
         }
@@ -263,4 +364,5 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }*/
+
 }

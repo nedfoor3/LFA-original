@@ -101,7 +101,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="80dp"
-            android:id="@+id/logo_equipo_mayas"
+            android:id="@+id/logo_equipo_mayas_sin_texto"
             android:src="@drawable/logo_mayas_fondo_blanco"
             android:layout_gravity="start"
             android:layout_weight="2" />
