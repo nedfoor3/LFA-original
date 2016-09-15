@@ -34,7 +34,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="5dp"
                 android:gravity="left"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="@color/blanco" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,7 +45,8 @@
                 android:id="@+id/numero_ganados"
                 android:layout_gravity="center"
                 android:layout_marginRight="2dp"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="@color/blanco" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -53,7 +55,8 @@
                 android:text="-"
                 android:id="@+id/guion_medio"
                 android:layout_gravity="center"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="@color/blanco" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,7 +67,8 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="2dp"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="@color/blanco" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -74,7 +78,8 @@
                 android:id="@+id/numero_empatados"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="@color/blanco" />
 
 
             <TextView
@@ -85,7 +90,8 @@
                 android:id="@+id/porcentaje_juegos_ganados"
                 android:layout_gravity="center"
                 android:textSize="12dp"
-                android:layout_marginLeft="15dp" />
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/blanco" />
 
 
         </TableRow>

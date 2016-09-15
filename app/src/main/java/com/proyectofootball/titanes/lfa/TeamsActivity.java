@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.proyectofootball.titanes.lfa.menu.MenuGenerico;
 import com.proyectofootball.titanes.lfa.model.Equipo;
 import com.proyectofootball.titanes.lfa.viewHolders.TeamsViewHolder;
 
@@ -23,6 +24,12 @@ public class TeamsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teams);
 
         instanciaElementos();
+
+        MenuGenerico mMenu = new MenuGenerico();
+        mMenu.crearMenu(this);
+
+
+
 
 
     }
@@ -48,18 +55,24 @@ public class TeamsActivity extends AppCompatActivity {
 
                 viewHolder.setGanados(equipo.getGanados());
                 viewHolder.setPerdidos(equipo.getPerdidos());
+                viewHolder.setBackgrounColor(equipo.getColorPrincipal());
                 //falta agregar lo de empatados
-                double porcentaje = 0.0;
+                Float porcentaje = 0f;
                 int totalPartidos = 0;
                 int mPerdidos = Integer.valueOf(equipo.getPerdidos());
                 int mGanados = Integer.valueOf(equipo.getGanados());
-
                 if (mGanados > 0) {
                     totalPartidos = mPerdidos + mGanados;
-                    porcentaje = Double.valueOf(mGanados) / Double.valueOf(totalPartidos);
-                    viewHolder.setPorcentaje(String.format("%.4f", porcentaje));
+
+                    if (equipo.getEmpates() != null && !equipo.getEmpates().isEmpty()) {
+                        int mEmpates = Integer.valueOf(equipo.getEmpates());
+                        totalPartidos = totalPartidos + mEmpates;
+                    }
+                    porcentaje = Float.valueOf(mGanados) / Float.valueOf(totalPartidos);
+                    viewHolder.setPorcentaje(String.format("%.3f", porcentaje));
+
                 } else {
-                    viewHolder.setPorcentaje(String.format("%.4f", porcentaje));
+                    viewHolder.setPorcentaje(String.format("%.3f", porcentaje));
                 }
 
             }
