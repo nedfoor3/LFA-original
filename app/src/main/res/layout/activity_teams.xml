@@ -2,173 +2,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Teams"
-    android:background="@color/blanco"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    tools:context=".TeamsActivity"
+    android:background="@color/blanco">
 
-
-    <LinearLayout
-        android:orientation="horizontal"
+    <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/negro"
-        android:id="@+id/linear_para_equipos">
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout"
+        tools:context=".MainActivity">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:id="@+id/logo_equipo"
-            android:src="@drawable/logo_condors"
-            android:layout_gravity="start"
-            android:layout_weight="2" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/nombre_equipo"
-            android:textColor="@color/blanco"
-            android:layout_gravity="center_vertical"
-            android:text="@string/condors"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/g_p"
-            android:textColor="@color/blanco"
-            android:layout_gravity="center_vertical"
-            android:text="1 - 5"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rating"
-            android:layout_gravity="center_vertical"
-            android:textColor="@color/blanco"
-            android:text=".166"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/linear_aguilas"
-        android:background="@color/rojo_aguila"
-        android:layout_below="@+id/linear_para_equipos">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/teams_list"
+            android:layout_marginTop="?attr/actionBarSize">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:id="@+id/logo_equipo_eagles"
-            android:src="@drawable/logo_eagles_para_fondo_rojo_sin_texto"
-            android:layout_gravity="start"
-            android:layout_weight="2" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/nombre_equipo_eagles"
-            android:textColor="@color/blanco"
-            android:layout_gravity="center_vertical"
-            android:text="@string/eagles"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/g_p_eagles"
-            android:textColor="@color/blanco"
-            android:layout_gravity="center_vertical"
-            android:text="3 - 3"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rating_eagles"
-            android:layout_gravity="center_vertical"
-            android:textColor="@color/blanco"
-            android:text=".500"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/azul_maya"
-        android:id="@+id/linear_mayas"
-        android:layout_below="@+id/linear_aguilas">
+        </android.support.v7.widget.RecyclerView>
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:id="@+id/logo_equipo_mayas_sin_texto"
-            android:src="@drawable/logo_mayas_fondo_blanco"
+        <ListView
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:id="@+id/lv_sliding_menu"
+            android:choiceMode="singleChoice"
+            android:background="@color/verde_logo_lfa"
             android:layout_gravity="start"
-            android:layout_weight="2" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/nombre_equipo_mayas"
-            android:textColor="@color/blanco"
-            android:layout_gravity="center_vertical"
-            android:text="@string/mayas"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/g_p_mayas"
-            android:textColor="@color/blanco"
-            android:layout_gravity="center_vertical"
-            android:text="4 - 2"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rating_mayas"
-            android:layout_gravity="center_vertical"
-            android:textColor="@color/blanco"
-            android:text=".666"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linear_raptors"
-        android:layout_below="@+id/linear_mayas"
-        android:layout_marginTop="10dp"
-        android:background="@color/verde_raptor">
+            android:layout_marginTop="?attr/actionBarSize"></ListView>
+    </android.support.v4.widget.DrawerLayout>
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:id="@+id/logo_equipo_raptors"
-            android:src="@drawable/logo_raptors_para_fondo_verde_sin_texto"
-            android:layout_gravity="start"
-            android:layout_weight="2" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/nombre_equipo_raptors"
-            android:textColor="@color/blanco"
-            android:layout_gravity="center_vertical"
-            android:text="@string/raptors"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/g_p_raptors"
-            android:textColor="@color/blanco"
-            android:layout_gravity="center_vertical"
-            android:text="4 - 2"
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rating_raptors"
-            android:layout_gravity="center_vertical"
-            android:textColor="@color/blanco"
-            android:text=".666"
-            android:layout_weight="1" />
-    </LinearLayout>
+
 </RelativeLayout>

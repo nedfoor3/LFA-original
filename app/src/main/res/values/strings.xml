@@ -2,6 +2,8 @@
     <string name="app_name">LFA</string>
 
     <string name="empty" translatable="false"></string>
+    <string name="empty_team_name">Name not found</string>
+    <string name="empty_number_value" translatable="false">\?</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 

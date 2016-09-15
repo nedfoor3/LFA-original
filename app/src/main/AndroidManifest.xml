@@ -28,7 +28,7 @@
             android:name=".DetalleEquipos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TopStories" />
-        <activity android:name=".Teams" />
+        <activity android:name=".TeamsActivity" />
         <activity android:name=".Preferencias" />
         <activity android:name=".AcercaDe" />
         <activity android:name=".Standings" />

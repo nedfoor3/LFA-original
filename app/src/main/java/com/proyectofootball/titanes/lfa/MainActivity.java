@@ -4,33 +4,22 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
-import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -61,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mDadabaseReference = FirebaseDatabase.getInstance().getReference().child("/2016/Noticias");
+        mDadabaseReference = FirebaseDatabase.getInstance().getReference().child("2016/noticias");
         mBlogList = (RecyclerView) findViewById(R.id.blog_list);
         mBlogList.setHasFixedSize(true);
         mBlogList.setLayoutManager(new LinearLayoutManager(this));
@@ -251,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(noticiasPrincipalesIntent);
                 break;
             case 1:
-                Intent detalleEquiposIntent = new Intent(this, Teams.class);
+                Intent detalleEquiposIntent = new Intent(this, TeamsActivity.class);
                 startActivity(detalleEquiposIntent);
                 break;
             case 2:
@@ -283,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                 //fragment = new TopStories();
                 break;
             case 1:
-               // fragment = new Teams();
+                // fragment = new TeamsActivity();
                 break;
             case 2:
                 //fragment = new Fragment3();
