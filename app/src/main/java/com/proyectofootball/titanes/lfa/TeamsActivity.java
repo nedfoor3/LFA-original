@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +19,7 @@ public class TeamsActivity extends AppCompatActivity {
     private DatabaseReference mDadabaseReference;
     private RecyclerView mTeamsRecyclerView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +30,10 @@ public class TeamsActivity extends AppCompatActivity {
         MenuGenerico mMenu = new MenuGenerico();
         mMenu.crearMenu(this);
 
-
-
-
-
     }
 
     private void instanciaElementos() {
         mDadabaseReference = FirebaseDatabase.getInstance().getReference().child("2016/equipo");
-
         mTeamsRecyclerView = (RecyclerView) findViewById(R.id.teams_list);
 
         mTeamsRecyclerView.setHasFixedSize(true);
@@ -47,12 +44,15 @@ public class TeamsActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseRecyclerAdapter<Equipo, TeamsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Equipo, TeamsViewHolder>(Equipo.class, R.layout.teams_row, TeamsViewHolder.class, mDadabaseReference) {
+        final FirebaseRecyclerAdapter<Equipo, TeamsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Equipo, TeamsViewHolder>(Equipo.class, R.layout.teams_row, TeamsViewHolder.class, mDadabaseReference) {
+
             @Override
             public void populateViewHolder(TeamsViewHolder viewHolder, Equipo equipo, int position) {
+
+                Log.v("POSITO", "" + position);
                 viewHolder.setNombre(equipo.getNombre());
-
-
+                int resourceId = getResources().getIdentifier("logo_" + equipo.getNombre().toLowerCase() + "_fondo_color_sin_texto", "drawable", "com.proyectofootball.titanes.lfa");
+                viewHolder.setImagenLogo(resourceId);
                 viewHolder.setGanados(equipo.getGanados());
                 viewHolder.setPerdidos(equipo.getPerdidos());
                 viewHolder.setBackgrounColor(equipo.getColorPrincipal());
@@ -64,9 +64,11 @@ public class TeamsActivity extends AppCompatActivity {
                 if (mGanados > 0) {
                     totalPartidos = mPerdidos + mGanados;
 
+
                     if (equipo.getEmpates() != null && !equipo.getEmpates().isEmpty()) {
                         int mEmpates = Integer.valueOf(equipo.getEmpates());
                         totalPartidos = totalPartidos + mEmpates;
+                        viewHolder.setEmpates(equipo.getEmpates());
                     }
                     porcentaje = Float.valueOf(mGanados) / Float.valueOf(totalPartidos);
                     viewHolder.setPorcentaje(String.format("%.3f", porcentaje));
@@ -81,4 +83,6 @@ public class TeamsActivity extends AppCompatActivity {
         mTeamsRecyclerView.setAdapter(firebaseRecyclerAdapter);
 
     }
+
+
 }
