@@ -8,11 +8,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.proyectofootball.titanes.lfa.AcercaDe;
+import com.proyectofootball.titanes.lfa.CalendarioActivity;
 import com.proyectofootball.titanes.lfa.MainActivity;
 import com.proyectofootball.titanes.lfa.ParaPruebas;
 import com.proyectofootball.titanes.lfa.R;
@@ -84,7 +86,7 @@ public class MenuGenerico extends AppCompatActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        /* setSupportActionBar(toolbar);
+        /*setSupportActionBar(toolbarParaLogo);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);*/
@@ -105,6 +107,8 @@ public class MenuGenerico extends AppCompatActivity {
                 activity.startActivity(detalleEquiposIntent);
                 break;
             case 2:
+                Intent intentCalendario = new Intent(activity, CalendarioActivity.class);
+                activity.startActivity(intentCalendario);
                 break;
             case 3:
                 Intent standingsIntent = new Intent(activity, Standings.class);
@@ -137,5 +141,21 @@ public class MenuGenerico extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
         actionBarDrawerToggle.onConfigurationChanged(newConfig);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                if (drawerLayout.isDrawerOpen(listViewSliding)) {
+                    drawerLayout.closeDrawer(listViewSliding);
+                } else {
+                    drawerLayout.openDrawer(listViewSliding);
+                }
+                return true;
+            }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

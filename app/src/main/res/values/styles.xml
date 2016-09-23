@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/verde_logo_lfa</item>
         <item name="colorPrimaryDark">@color/verde_logo_lfa</item>
         <item name="colorAccent">@color/rojo_logo_lfa</item>
+        <item name="windowNoTitle">true</item>
 
     </style>
 

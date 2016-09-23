@@ -3,7 +3,7 @@
 
     <string name="empty" translatable="false"></string>
     <string name="empty_team_name">Name not found</string>
-    <string name="empty_number_value" translatable="false">\?</string>
+    <string name="empty_number_value" translatable="false">-</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
@@ -127,6 +127,13 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="construyendo">(In construction)</string>
+
+    <string name="local">Local</string>
+    <string name="visitante">Visitor</string>
+    <string name="estatus_pendiente">P</string>
+    <string name="sin_fecha">No Date Available</string>
+    <string name="final_texto" translatable="false">final</string>
+    <string name="jugando_texto">Playing</string>
 
 
 </resources>

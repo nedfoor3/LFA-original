@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -28,10 +27,15 @@ public class TeamsActivity extends AppCompatActivity {
         instanciaElementos();
 
         MenuGenerico mMenu = new MenuGenerico();
+
         mMenu.crearMenu(this);
+
 
     }
 
+    /**
+     * Metodo para instanciar los elementos a usar en la actividad
+     */
     private void instanciaElementos() {
         mDadabaseReference = FirebaseDatabase.getInstance().getReference().child("2016/equipo");
         mTeamsRecyclerView = (RecyclerView) findViewById(R.id.teams_list);
@@ -44,12 +48,10 @@ public class TeamsActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        final FirebaseRecyclerAdapter<Equipo, TeamsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Equipo, TeamsViewHolder>(Equipo.class, R.layout.teams_row, TeamsViewHolder.class, mDadabaseReference) {
+        final FirebaseRecyclerAdapter<Equipo, TeamsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Equipo, TeamsViewHolder>(Equipo.class, R.layout.row_teams, TeamsViewHolder.class, mDadabaseReference) {
 
             @Override
             public void populateViewHolder(TeamsViewHolder viewHolder, Equipo equipo, int position) {
-
-                Log.v("POSITO", "" + position);
                 viewHolder.setNombre(equipo.getNombre());
                 int resourceId = getResources().getIdentifier("logo_" + equipo.getNombre().toLowerCase() + "_fondo_color_sin_texto", "drawable", "com.proyectofootball.titanes.lfa");
                 viewHolder.setImagenLogo(resourceId);

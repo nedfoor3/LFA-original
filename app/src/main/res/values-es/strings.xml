@@ -46,4 +46,9 @@
     <string name="acerca_de_texto">La informaci\u00F3n y logos contenidos son de car\u00E1cter informativo en busca de fomentar el Football en M\u00E9xico.</string>
     <string name="construyendo">(En construcci\u00F3n)</string>
     <string name="probando">Probando</string>
+    <string name="local">Local</string>
+    <string name="visitante">Visitante</string>
+    <string name="estatus_pendiente">P</string>
+    <string name="sin_fecha">Sin fecha disponible</string>
+    <string name="jugando_texto">Jugando</string>
 </resources>
