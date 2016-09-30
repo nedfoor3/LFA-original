@@ -1,6 +1,5 @@
 package com.proyectofootball.titanes.lfa;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -8,9 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -22,7 +19,7 @@ import com.proyectofootball.titanes.lfa.adapter.SlidingMenuAdapter;
 import com.proyectofootball.titanes.lfa.menu.MenuGenerico;
 import com.proyectofootball.titanes.lfa.model.Blog;
 import com.proyectofootball.titanes.lfa.model.ItemSlideMenu;
-import com.squareup.picasso.Picasso;
+import com.proyectofootball.titanes.lfa.viewHolders.NewsViewHolder;
 
 import java.util.List;
 
@@ -51,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setReverseLayout(true);
-        linearLayoutManager.scrollToPosition(0);
+        linearLayoutManager.setStackFromEnd(true);
         mBlogList.setLayoutManager(linearLayoutManager);
 
         MenuGenerico mMenu = new MenuGenerico();
@@ -144,15 +141,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart(){
         super.onStart();
 
-        FirebaseRecyclerAdapter<Blog, BlogViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blog, BlogViewHolder>(
+        FirebaseRecyclerAdapter<Blog, NewsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blog, NewsViewHolder>(
                 Blog.class,
                 R.layout.blog_row,
-                BlogViewHolder.class,
+                NewsViewHolder.class,
                 mDadabaseReference
 
         ) {
             @Override
-            protected void populateViewHolder(BlogViewHolder viewHolder, Blog model, int position) {
+            public void populateViewHolder(NewsViewHolder viewHolder, Blog model, int position) {
                 viewHolder.setTitleNota(model.getEncabezadoNota());
                 viewHolder.setCuerpoNota(model.getTextoNota());
                 viewHolder.setImagenNota(getApplicationContext(), model.getImagenNota());
@@ -162,32 +159,7 @@ public class MainActivity extends AppCompatActivity {
         mBlogList.setAdapter(firebaseRecyclerAdapter);
     }
 
-    public static class BlogViewHolder extends RecyclerView.ViewHolder{
-        View mView;
-        public BlogViewHolder(View itemView) {
-            super(itemView);
-             mView = itemView;
-        }
-        public void setTitleNota(String titleNota) {
-            TextView post_title = (TextView)mView.findViewById(R.id.post_title);
-            post_title.setText(titleNota);
 
-        }
-        public void setCuerpoNota(String textoNota){
-            TextView post_cuerpo = (TextView)mView.findViewById(R.id.post_text);
-            post_cuerpo.setText(textoNota);
-
-        }
-
-        public void setImagenNota(Context ctx, String imagenNota) {
-            ImageView post_image = (ImageView)mView.findViewById(R.id.post_image);
-            Picasso.with(ctx).load(imagenNota).into(post_image);
-
-
-
-
-        }
-    }
     /*public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_detalle_equipos, menu);
         return super.onCreateOptionsMenu(menu);

@@ -4,16 +4,17 @@ package com.proyectofootball.titanes.lfa.model;
  * Created by Tonatiuh on 12/09/2016.
  */
 public class Blog {
-    private String imagenNota, encabezadoNota, textoNota;
+    private String imagenNota, encabezadoNota, textoNota, fechaNota;
 
     public Blog() {
 
     }
 
-    public Blog(String imagenNota, String encabezadoNota, String textoNota) {
+    public Blog(String imagenNota, String encabezadoNota, String textoNota, String fechaNota) {
         this.imagenNota = imagenNota;
         this.encabezadoNota = encabezadoNota;
         this.textoNota = textoNota;
+        this.fechaNota = fechaNota;
     }
 
     public String getImagenNota() {
@@ -38,5 +39,13 @@ public class Blog {
 
     public void setTextoNota(String textoNota) {
         this.textoNota = textoNota;
+    }
+
+    public String getFechaNota() {
+        return fechaNota;
+    }
+
+    public void setFechaNota(String fechaNota) {
+        this.fechaNota = fechaNota;
     }
 }

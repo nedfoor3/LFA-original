@@ -1,49 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/verde_logo_lfa"
-        android:id="@+id/main_toolbar">
+        android:background="@color/verde_logo_lfa">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:src="@drawable/logo_lfa_sin_texto"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_lfa_sin_texto" />
     </android.support.v7.widget.Toolbar>
 
 
     <android.support.v4.widget.DrawerLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
-    tools:context=".MainActivity">
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/blog_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/blanco"
-            android:id="@+id/blog_list"
-            android:layout_marginTop="?attr/actionBarSize"></android.support.v7.widget.RecyclerView>
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@color/blanco"></android.support.v7.widget.RecyclerView>
 
-    <ListView
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:id="@+id/lv_sliding_menu"
-        android:choiceMode="singleChoice"
-        android:background="@color/verde_logo_lfa"
-        android:layout_gravity="start"
-        android:layout_marginTop="?attr/actionBarSize"></ListView>
+        <ListView
+            android:id="@+id/lv_sliding_menu"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@color/verde_logo_lfa"
+            android:choiceMode="singleChoice"></ListView>
 
-</android.support.v4.widget.DrawerLayout>
-
-
+    </android.support.v4.widget.DrawerLayout>
 
 
 </RelativeLayout>
