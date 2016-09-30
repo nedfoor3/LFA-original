@@ -3,6 +3,7 @@
     package="com.proyectofootball.titanes.lfa">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
 
     <application
@@ -24,15 +25,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".DetalleEquipos"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TopStories" />
         <activity android:name=".TeamsActivity" />
         <activity android:name=".Preferencias" />
         <activity android:name=".AcercaDe" />
         <activity android:name=".Standings" />
-        <activity android:name=".ParaPruebas"></activity>
+        <activity android:name=".ParaPruebas" />
+        <activity android:name=".CalendarioActivity" />
+        <activity android:name=".TeamsDetailActivity" />
+        <activity android:name=".NewsDetailActivity"></activity>
     </application>
 
 </manifest>
