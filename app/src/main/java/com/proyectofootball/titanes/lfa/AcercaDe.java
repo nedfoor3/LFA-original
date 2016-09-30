@@ -1,4 +1,5 @@
 package com.proyectofootball.titanes.lfa;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
@@ -9,8 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.proyectofootball.titanes.lfa.R;
 
 public class AcercaDe extends AppCompatActivity {
     public TextView tvContacto, tvDesarrollo;
@@ -29,9 +28,9 @@ public class AcercaDe extends AppCompatActivity {
         tvDesarrollo.setTypeface(cabinSketch);
         tvContacto.setTypeface(fingerPaint);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);*/
 
         imgLogoHead.setOnClickListener(new View.OnClickListener() {
             @Override

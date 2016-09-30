@@ -84,6 +84,7 @@ public class TeamsActivity extends AppCompatActivity {
 
         mTeamsRecyclerView.setAdapter(firebaseRecyclerAdapter);
 
+
     }
 
 

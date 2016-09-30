@@ -1,9 +1,6 @@
 package com.proyectofootball.titanes.lfa;
 
-import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,9 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -24,11 +19,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.proyectofootball.titanes.lfa.adapter.SlidingMenuAdapter;
+import com.proyectofootball.titanes.lfa.menu.MenuGenerico;
 import com.proyectofootball.titanes.lfa.model.Blog;
 import com.proyectofootball.titanes.lfa.model.ItemSlideMenu;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,8 +48,16 @@ public class MainActivity extends AppCompatActivity {
         mDadabaseReference = FirebaseDatabase.getInstance().getReference().child("2016/noticias");
         mBlogList = (RecyclerView) findViewById(R.id.blog_list);
         mBlogList.setHasFixedSize(true);
-        mBlogList.setLayoutManager(new LinearLayoutManager(this));
 
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.scrollToPosition(0);
+        mBlogList.setLayoutManager(linearLayoutManager);
+
+        MenuGenerico mMenu = new MenuGenerico();
+
+        mMenu.crearMenu(this);
+        /*
         listViewSliding = (ListView)findViewById(R.id.lv_sliding_menu);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         listSliding = new ArrayList<>();
@@ -110,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        actionBarDrawerToggle.syncState();
+        actionBarDrawerToggle.syncState();*/
 
 
  /*       pruebaFireBase.setOnClickListener(new View.OnClickListener() {
@@ -204,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }*/
-
+/*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -223,13 +226,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        actionBarDrawerToggle.syncState();
+        //actionBarDrawerToggle.syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig){
         super.onConfigurationChanged(newConfig);
-        actionBarDrawerToggle.onConfigurationChanged(newConfig);
+        //actionBarDrawerToggle.onConfigurationChanged(newConfig);
     }
 
 
@@ -293,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
             default:
                 //fragment = new Fragment1();
                 break;
-        }
+        }*/
 
        /* if(null!=fragment) {
             FragmentManager fragmentManager = getFragmentManager();
@@ -354,4 +357,3 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }*/
 
-}

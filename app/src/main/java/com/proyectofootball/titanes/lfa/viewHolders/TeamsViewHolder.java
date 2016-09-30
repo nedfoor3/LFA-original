@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.proyectofootball.titanes.lfa.DetalleEquipos;
 import com.proyectofootball.titanes.lfa.R;
+import com.proyectofootball.titanes.lfa.TeamsDetailActivity;
 
 /**
  * Created by Ricardo Rodriguez on 9/14/2016.
@@ -55,7 +55,7 @@ public final class TeamsViewHolder extends RecyclerView.ViewHolder implements Vi
      */
     @Override
     public void onClick(View view) {
-        Intent intentDetalleEquipo = new Intent(view.getContext(), DetalleEquipos.class);
+        Intent intentDetalleEquipo = new Intent(view.getContext(), TeamsDetailActivity.class);
         intentDetalleEquipo.putExtra(this.NOMBRE_EQUIPO, this.nombreEquipo);
         intentDetalleEquipo.putExtra(this.PARTIDOS_GANADOS, this.ganados);
         intentDetalleEquipo.putExtra(this.PARTIDOS_PERDIDOS, this.perdidos);

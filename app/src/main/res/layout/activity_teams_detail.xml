@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_teams_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    tools:context="com.proyectofootball.titanes.lfa.TeamsDetailActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -54,7 +54,6 @@
                 android:src="@drawable/logo_lfa_sin_texto"
                 app:layout_collapseMode="parallax" />
 
-
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
@@ -63,28 +62,29 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay"></android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
 
+    </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_detalle_equipos" />
     <!--<RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_below="@+id/app_bar">
+
         <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tab_selector_roster_calendario"
-            app:tabMode="fixed"
-            app:tabGravity="center">
-        </android.support.design.widget.TabLayout>
+            android:layout_centerHorizontal="true"
+            app:tabGravity="center"
+            app:tabMode="fixed" />
+
         <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/pager_selector_roster_calendario"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        </android.support.v4.view.ViewPager>
-    </RelativeLayout>-->
-
+            android:layout_below="@+id/tab_layout"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -94,19 +94,4 @@
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end" />
 
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".DetalleEquipos">
-
-        <ListView
-            android:id="@+id/lv_sliding_menu"
-            android:layout_width="250dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:background="@color/verde_logo_lfa"
-            android:choiceMode="singleChoice"></ListView>
-    </android.support.v4.widget.DrawerLayout>
 </android.support.design.widget.CoordinatorLayout>
