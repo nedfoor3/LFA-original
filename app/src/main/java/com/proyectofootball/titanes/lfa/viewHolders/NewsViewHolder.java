@@ -3,6 +3,7 @@ package com.proyectofootball.titanes.lfa.viewHolders;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,6 +21,9 @@ import com.squareup.picasso.Picasso;
 public final class NewsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     View mView;
     private Blog blog = new Blog();
+    private static final String TITULO = "titulo";
+    private static final String NOTA = "nota";
+    private static final String IMAGEN = "imagen";
 
 
     public NewsViewHolder(View itemView) {
@@ -37,7 +41,7 @@ public final class NewsViewHolder extends RecyclerView.ViewHolder implements Vie
 
     public void setCuerpoNota(String textoNota) {
         TextView post_cuerpo = (TextView) mView.findViewById(R.id.post_text);
-        post_cuerpo.setText(textoNota);
+        post_cuerpo.setText(Html.fromHtml(textoNota));
         blog.setTextoNota(textoNota);
 
     }
@@ -53,9 +57,9 @@ public final class NewsViewHolder extends RecyclerView.ViewHolder implements Vie
 
         Log.v("AQUIII", "");
         Intent intentDetalleNota = new Intent(view.getContext(), NewsDetailActivity.class);
-        intentDetalleNota.putExtra("titulo", this.blog.getEncabezadoNota());
-        intentDetalleNota.putExtra("texto", this.blog.getTextoNota());
-        intentDetalleNota.putExtra("imagen", this.blog.getImagenNota());
+        intentDetalleNota.putExtra(TITULO, blog.getEncabezadoNota());
+        intentDetalleNota.putExtra(NOTA, blog.getTextoNota());
+        intentDetalleNota.putExtra(IMAGEN, blog.getImagenNota());
         view.getContext().startActivity(intentDetalleNota);
 
     }
