@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">LFA</string>
 
+    <string name="unit_id">ca-app-pub-2537333932314106~6678440077</string>
+    <string name="test_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="main_unit_id">ca-app-pub-2537333932314106/8155173270</string>
+    <string name="news_detail_unit_id">ca-app-pub-2537333932314106/5062106075</string>
+    <string name="news_only_video_banner_unit_id">ca-app-pub-2537333932314106/2892212079</string>
+    <string name="news_video_text_banner_unit_id">ca-app-pub-2537333932314106/8799144876</string>
+
+
+    <string name="teams_intersticial_unit_id">ca-app-pub-2537333932314106/1829438076</string>
+    <string name="teams_banner_unit_id">ca-app-pub-2537333932314106/3306171279</string>
+    <string name="teams_detail_banner_unit_id">ca-app-pub-2537333932314106/4782904478</string>
+
+
     <string name="empty" translatable="false"></string>
     <string name="empty_team_name">Name not found</string>
     <string name="empty_number_value" translatable="false">-</string>

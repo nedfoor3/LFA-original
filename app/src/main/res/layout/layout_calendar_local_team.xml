@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout_local_team"
+    android:background="@color/verde_logo_lfa">
+
+    <ImageView
+        android:id="@+id/logo_equipo_local"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="2dp"
+        android:src="@drawable/logo_lfa_sin_texto" />
+</RelativeLayout>

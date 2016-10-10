@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".CalendarioActivity">
 
-    <android.support.v7.widget.Toolbar
+    <android.support.v7.widget.AppBar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/verde_logo_lfa"
@@ -16,7 +17,7 @@
             android:layout_height="45dp"
             android:src="@drawable/logo_lfa_sin_texto"
             android:layout_gravity="center_horizontal" />
-    </android.support.v7.widget.Toolbar>
+    </android.support.v7.widget.AppBar>
 
     <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"
@@ -24,13 +25,28 @@
         android:id="@+id/drawer_layout"
         tools:context=".MainActivity">
 
+        <RelativeLayout
+            android:id="@+id/relativeAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/calendar_list"
-            android:layout_marginTop="?attr/actionBarSize">
+            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_above="@+id/adView">
 
         </android.support.v7.widget.RecyclerView>
+
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/test_ad_unit_id"></com.google.android.gms.ads.AdView>
+        </RelativeLayout>
 
         <ListView
             android:layout_width="250dp"

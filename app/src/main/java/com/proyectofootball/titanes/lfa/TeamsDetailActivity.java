@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.proyectofootball.titanes.lfa.adapter.DetailsTeamPagerAdapter;
 
 public class TeamsDetailActivity extends AppCompatActivity {
@@ -49,7 +51,9 @@ public class TeamsDetailActivity extends AppCompatActivity {
 
         cargaDetallesEquipo();
 
-
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         /*MenuGenerico mMenu = new MenuGenerico();
         mMenu.crearMenu(this);*/
 

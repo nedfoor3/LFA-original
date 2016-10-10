@@ -2,19 +2,21 @@ package com.proyectofootball.titanes.lfa;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.proyectofootball.titanes.lfa.model.Blog;
 import com.squareup.picasso.Picasso;
 
-public class NewsDetailActivity extends AppCompatActivity {
+public class NewsTextActivity extends AppCompatActivity {
 
 
     private ImageView imagenCabecera;
     private TextView tvTitulo;
-    private TextView tvTexto;
+    //private TextView tvTexto;
     private TextView tvFecha;
     private Bundle extras;
     private Blog nota = new Blog();
@@ -25,11 +27,15 @@ public class NewsDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news_detail);
+        setContentView(R.layout.activity_news_text);
 
         instanciarElementos();
 
         cargaDetalleNoticia();
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     /**
@@ -38,7 +44,7 @@ public class NewsDetailActivity extends AppCompatActivity {
     private void instanciarElementos() {
         imagenCabecera = (ImageView) findViewById(R.id.post_image);
         tvFecha = (TextView) findViewById(R.id.post_date);
-        tvTexto = (TextView) findViewById(R.id.post_text);
+        //tvTexto = (TextView) findViewById(R.id.post_text);
         tvTitulo = (TextView) findViewById(R.id.post_title);
 
         extras = getIntent().getExtras();
@@ -54,6 +60,13 @@ public class NewsDetailActivity extends AppCompatActivity {
 
         Picasso.with(this).load(nota.getImagenNota()).into(imagenCabecera);
         tvTitulo.setText(nota.getEncabezadoNota());
-        tvTexto.setText(Html.fromHtml(nota.getTextoNota()));
+        //tvTexto.setText(Html.fromHtml(nota.getTextoNota()));
+
+        WebView webview = (WebView) findViewById(R.id.web_view_news);
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.clearCache(true);
+
+        webview.loadData(nota.getTextoNota(), "text/html; charset=UTF-8", null);
+        //webview.loadUrl("http://livestream.com/accounts/1203577/events/4314193/player?width=640&height=360&enableInfoAndActivity=true&autoPlay=true&mute=false");
     }
 }

@@ -3,6 +3,7 @@ package com.proyectofootball.titanes.lfa.viewHolders;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.proyectofootball.titanes.lfa.R;
@@ -30,6 +31,11 @@ public class CalendarViewHolder extends RecyclerView.ViewHolder {
         imageView.setImageResource(imagenLocal);
     }
 
+    public void setBackgroundLocal(int backgroundLocal) {
+        RelativeLayout relativeLayout = (RelativeLayout) mView.findViewById(R.id.layout_local_team);
+        relativeLayout.setBackgroundColor(backgroundLocal);
+    }
+
     public void setVisitante(String visitante) {
         TextView tvVisitante = (TextView) mView.findViewById(R.id.tvEquipoVisitante);
         tvVisitante.setText(visitante);
@@ -38,6 +44,11 @@ public class CalendarViewHolder extends RecyclerView.ViewHolder {
     public void setImagenVisitante(int imagenVisitante) {
         ImageView imageView = (ImageView) mView.findViewById(R.id.logo_equipo_visitante);
         imageView.setImageResource(imagenVisitante);
+    }
+
+    public void setBackgroundVisitante(int backgroundVisitante) {
+        RelativeLayout relativeLayout = (RelativeLayout) mView.findViewById(R.id.layout_visit_team);
+        relativeLayout.setBackgroundColor(backgroundVisitante);
     }
 
     public void setEstatus(String estatus) {

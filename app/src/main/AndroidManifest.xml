@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
         android:name=".Firebase.FireApp"
@@ -32,7 +34,9 @@
         <activity android:name=".ParaPruebas" />
         <activity android:name=".CalendarioActivity" />
         <activity android:name=".TeamsDetailActivity" />
-        <activity android:name=".NewsDetailActivity"></activity>
+        <activity android:name=".NewsTextActivity" />
+        <activity android:name=".NewsVideoTextActivity" />
+        <activity android:name=".NewsVideoActivity" />
     </application>
 
 </manifest>

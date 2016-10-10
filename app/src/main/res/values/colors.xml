@@ -19,4 +19,18 @@
     <color name="dorado_condor">#c5af73</color>
     <color name="verde_raptor">#0f5b42</color>
     <color name="dorado_raptor">#C6AF72</color>
+
+    <color name="primary_eagles">#c12439</color>
+    <color name="secondary_eagles">#ffffff</color>
+
+    <color name="primary_condors">#000000</color>
+    <color name="secondary_condors">#c5af73</color>
+
+    <color name="primary_mayas">#002747</color>
+    <color name="secondary_mayas">#ffffff</color>
+
+    <color name="primary_raptors">#0f5b42</color>
+    <color name="secondary_raptors">#C6AF72</color>
+
+
 </resources>

@@ -6,6 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.proyectofootball.titanes.lfa.menu.MenuGenerico;
@@ -21,7 +23,9 @@ public class CalendarioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendario);
-
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         MenuGenerico mMenu = new MenuGenerico();
         mMenu.crearMenu(this);
 
@@ -52,8 +56,16 @@ public class CalendarioActivity extends AppCompatActivity {
                 }
                 int resourceIdLocal = getResources().getIdentifier("logo_" + calendario.getLocal().toLowerCase() + "_fondo_color_sin_texto", "drawable", "com.proyectofootball.titanes.lfa");
                 viewHolder.setImagenLocal(resourceIdLocal);
+                int primaryColorLocal = getResources().getIdentifier("primary_" + calendario.getLocal().toLowerCase(), "color", "com.proyectofootball.titanes.lfa");
+                primaryColorLocal = getResources().getColor(primaryColorLocal);
+                viewHolder.setBackgroundLocal(primaryColorLocal);
+
+
                 int resourceIdVisitante = getResources().getIdentifier("logo_" + calendario.getVisitante().toLowerCase() + "_fondo_color_sin_texto", "drawable", "com.proyectofootball.titanes.lfa");
                 viewHolder.setImagenVisitante(resourceIdVisitante);
+                int primaryColorVisitante = getResources().getIdentifier("primary_" + calendario.getVisitante().toLowerCase(), "color", "com.proyectofootball.titanes.lfa");
+                primaryColorVisitante = getResources().getColor(primaryColorVisitante);
+                viewHolder.setBackgroundVisitante(primaryColorVisitante);
                 viewHolder.setHorario(calendario.getFecha().concat(" ").concat(calendario.getHora()));
             }
         };

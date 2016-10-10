@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_teams_detail"
@@ -93,5 +94,20 @@
         android:src="@android:drawable/ic_dialog_email"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end" />
+
+    <RelativeLayout
+        android:id="@+id/relativeAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/test_ad_unit_id"></com.google.android.gms.ads.AdView>
+    </RelativeLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

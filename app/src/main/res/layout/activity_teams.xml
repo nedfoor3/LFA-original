@@ -1,44 +1,59 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TeamsActivity">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/verde_logo_lfa"
-        android:id="@+id/main_toolbar">
+        android:background="@color/verde_logo_lfa">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:src="@drawable/logo_lfa_sin_texto"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_lfa_sin_texto" />
     </android.support.v7.widget.Toolbar>
 
     <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/drawer_layout"
-        tools:context=".MainActivity">
+        tools:context=".TeamsActivity">
 
+        <RelativeLayout
+            android:id="@+id/relativeAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/teams_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/teams_list"
             android:layout_marginTop="?attr/actionBarSize">
 
         </android.support.v7.widget.RecyclerView>
 
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/test_ad_unit_id"></com.google.android.gms.ads.AdView>
+        </RelativeLayout>
+
         <ListView
+            android:id="@+id/lv_sliding_menu"
             android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:id="@+id/lv_sliding_menu"
-            android:choiceMode="singleChoice"
-            android:background="@color/verde_logo_lfa"
             android:layout_gravity="start"
-            android:layout_marginTop="?attr/actionBarSize"></ListView>
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@color/verde_logo_lfa"
+            android:choiceMode="singleChoice"></ListView>
     </android.support.v4.widget.DrawerLayout>
 
 
