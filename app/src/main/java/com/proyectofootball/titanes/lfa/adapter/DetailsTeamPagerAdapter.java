@@ -2,6 +2,7 @@ package com.proyectofootball.titanes.lfa.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -22,11 +23,16 @@ public class DetailsTeamPagerAdapter extends FragmentPagerAdapter {
 
     String tabTitles[] = new String[]{"Calendario", "Roster"};
     Context context;
+    String nombreEquipo;
+    Bundle args = new Bundle();
 
 
-    public DetailsTeamPagerAdapter(FragmentManager fm, Context context) {
+    public DetailsTeamPagerAdapter(FragmentManager fm, Context context, String nombreEquipo) {
         super(fm);
         this.context = context;
+        this.nombreEquipo = nombreEquipo;
+        args.putString("nombreEquipo", nombreEquipo);
+
     }
 
     @Override
@@ -34,9 +40,14 @@ public class DetailsTeamPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
             default:
-                return new CalendarFragment();
+                Fragment calendarF = new CalendarFragment();
+                calendarF.setArguments(args);
+                return calendarF;
             case 1:
-                return new RosterFragment();
+                Fragment rosterF = new RosterFragment();
+                rosterF.setArguments(args);
+
+                return rosterF;
         }
     }
 

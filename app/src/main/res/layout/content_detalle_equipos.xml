@@ -19,12 +19,20 @@
             app:tabGravity="center"
             app:tabMode="fixed"></android.support.design.widget.TabLayout>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout_calendario_roster"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/tab_layout"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"></android.support.v4.view.ViewPager>
+            android:layout_height="?attr/actionBarSize"
+            android:layout_centerHorizontal="true"
+            android:fitsSystemWindows="true"
+            app:tabGravity="center"
+            app:tabMode="fixed"></android.support.design.widget.TabLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager_datos_complementarios"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_below="@+id/tab_layout_calendario_roster"></android.support.v4.view.ViewPager>
 
     </RelativeLayout>
 

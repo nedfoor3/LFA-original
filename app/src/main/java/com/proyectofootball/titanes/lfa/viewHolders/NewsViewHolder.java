@@ -118,6 +118,4 @@ public final class NewsViewHolder extends RecyclerView.ViewHolder implements Vie
         intentDetalleNota.putExtra(VIDEO, blog.getVideoNota());
         view.getContext().startActivity(intentDetalleNota);
     }
-
-
 }

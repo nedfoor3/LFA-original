@@ -67,33 +67,6 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_detalle_equipos" />
-    <!--<RelativeLayout
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:layout_below="@+id/app_bar">
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            app:tabGravity="center"
-            app:tabMode="fixed" />
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/tab_layout"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end" />
 
     <RelativeLayout
         android:id="@+id/relativeAdd"
@@ -108,6 +81,5 @@
             ads:adSize="BANNER"
             ads:adUnitId="@string/test_ad_unit_id"></com.google.android.gms.ads.AdView>
     </RelativeLayout>
-
 
 </android.support.design.widget.CoordinatorLayout>

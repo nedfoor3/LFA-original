@@ -4,6 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:background="@color/blanco"></RelativeLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
@@ -11,6 +15,7 @@
         android:background="@drawable/list_item_style"
         android:gravity="center_vertical"
         android:weightSum="1">
+
 
         <ImageView
             android:id="@+id/item_img"
@@ -29,9 +34,6 @@
             android:layout_marginRight="15dp"
             android:gravity="center_vertical" />
     </LinearLayout>
-    <RelativeLayout
-        android:layout_width="250dp"
-        android:layout_height="1dp"
-        android:background="@color/blanco"></RelativeLayout>
+
 
 </LinearLayout>

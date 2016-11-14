@@ -6,14 +6,18 @@
 
     <color name="negro">#000000</color>
     <color name="blanco">#FFFFFF</color>
+    <color name="blanco_transparente">#D1FFFFFF</color>
 
     <color name="gris">#333333</color>
     <color name="verde_web">#58b604</color>
     <color name="rojo_web">#d10000</color>
 
     <color name="verde_logo_lfa">#00742D</color>
+    <color name="verde_logo_lfa_transparente">#D100742D</color>
     <color name="verde_logo_lfa_dark">#035C25</color>
     <color name="rojo_logo_lfa">#A51016</color>
+    <color name="rojo_transparente">#7FA51016</color>
+    <color name="rojo_transparente_light">#1FC14242</color>
     <color name="azul_maya">#002747</color>
     <color name="rojo_aguila">#c12439</color>
     <color name="dorado_condor">#c5af73</color>

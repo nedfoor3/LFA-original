@@ -21,13 +21,14 @@ import com.proyectofootball.titanes.lfa.viewHolders.CalendarViewHolder;
  * Activities that contain this fragment must implement the
  * {@link CalendarFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link CalendarFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class CalendarFragment extends Fragment {
 
 
     private OnFragmentInteractionListener mListener;
+    private String nombreEquipo;
+    /*Nombre Equipo Static*/
+    private final static String NOMBRE_EQUIPO = "nombreEquipo";
 
 
     private DatabaseReference calendarioDbReference;
@@ -37,28 +38,15 @@ public class CalendarFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CalendarFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CalendarFragment newInstance(String param1, String param2) {
-        CalendarFragment fragment = new CalendarFragment();
-        Bundle args = new Bundle();
-
-
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+        if (getArguments() != null) {
+            this.nombreEquipo = getArguments().getString(NOMBRE_EQUIPO).toLowerCase();
+        }
 
     }
 
@@ -66,11 +54,10 @@ public class CalendarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View rootView = inflater.inflate(R.layout.fragment_calendar, container, false);
 
 
-        calendarioDbReference = FirebaseDatabase.getInstance().getReference().child("2016/calendario/jornada");
+        calendarioDbReference = FirebaseDatabase.getInstance().getReference().child("2016/equipo/" + nombreEquipo + "/partidos");
 
         mCalendarRecyclerView = (RecyclerView) rootView.findViewById(R.id.calendar_list);
 
@@ -97,8 +84,16 @@ public class CalendarFragment extends Fragment {
                 }
                 int resourceIdLocal = getResources().getIdentifier("logo_" + calendario.getLocal().toLowerCase() + "_fondo_color_sin_texto", "drawable", "com.proyectofootball.titanes.lfa");
                 viewHolder.setImagenLocal(resourceIdLocal);
+                int primaryColorLocal = getResources().getIdentifier("primary_" + calendario.getLocal().toLowerCase(), "color", "com.proyectofootball.titanes.lfa");
+                primaryColorLocal = getResources().getColor(primaryColorLocal);
+                viewHolder.setBackgroundLocal(primaryColorLocal);
+
+
                 int resourceIdVisitante = getResources().getIdentifier("logo_" + calendario.getVisitante().toLowerCase() + "_fondo_color_sin_texto", "drawable", "com.proyectofootball.titanes.lfa");
                 viewHolder.setImagenVisitante(resourceIdVisitante);
+                int primaryColorVisitante = getResources().getIdentifier("primary_" + calendario.getVisitante().toLowerCase(), "color", "com.proyectofootball.titanes.lfa");
+                primaryColorVisitante = getResources().getColor(primaryColorVisitante);
+                viewHolder.setBackgroundVisitante(primaryColorVisitante);
                 viewHolder.setHorario(calendario.getFecha().concat(" ").concat(calendario.getHora()));
             }
         };
@@ -110,6 +105,7 @@ public class CalendarFragment extends Fragment {
         return rootView;
 
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

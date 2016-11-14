@@ -148,5 +148,14 @@
     <string name="final_texto" translatable="false">final</string>
     <string name="jugando_texto">Playing</string>
 
+    <string name="abreviature_number">No.</string>
+    <string name="name_string">Name</string>
+
+    <string name="position_string">Pos</string>
+
+    <string name="height_string">Height</string>
+
+    <string name="weight_string">Weight</string>
+
 
 </resources>

@@ -5,19 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/main_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/verde_logo_lfa">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/logo_lfa_sin_texto" />
-    </android.support.v7.widget.Toolbar>
-
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -34,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="?attr/actionBarSize"
-            android:background="@color/blanco"
+            android:background="@color/verde_logo_lfa_transparente"
             android:layout_above="@+id/adView"></android.support.v7.widget.RecyclerView>
 
 
@@ -58,6 +45,20 @@
 
 
     </android.support.v4.widget.DrawerLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/verde_logo_lfa">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_lfa_sin_texto" />
+
+    </android.support.v7.widget.Toolbar>
 
 
 </RelativeLayout>

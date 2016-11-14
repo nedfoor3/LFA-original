@@ -4,10 +4,48 @@
     android:layout_height="match_parent"
     tools:context=".fragments.RosterFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TableRow>
+
+                <include
+                    layout="@layout/layout_header_left_rosters"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <include
+                    layout="@layout/layout_header_right_roster"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="492dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/tableLayout">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/roster_list"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.DrawerLayout>
+    </RelativeLayout>
 </FrameLayout>

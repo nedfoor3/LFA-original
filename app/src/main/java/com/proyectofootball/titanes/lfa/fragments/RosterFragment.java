@@ -3,68 +3,120 @@ package com.proyectofootball.titanes.lfa.fragments;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.proyectofootball.titanes.lfa.R;
+import com.proyectofootball.titanes.lfa.model.Jugador;
+import com.proyectofootball.titanes.lfa.viewHolders.RosterViewHolder;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link RosterFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link RosterFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class RosterFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private CalendarFragment.OnFragmentInteractionListener mListener;
+    private String nombreEquipo;
+    /*Nombre Equipo Static*/
+    private final static String NOMBRE_EQUIPO = "nombreEquipo";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private static final int PER = 0;
+    private static final int UNEVEN = 1;
 
-    private OnFragmentInteractionListener mListener;
+    String[] color = {"#FFFFFF", "#D1FFFFFF"};
+
+    private DatabaseReference rosterDBReference;
+    private RecyclerView mRosterRecyclerView;
 
     public RosterFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RosterFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RosterFragment newInstance(String param1, String param2) {
-        RosterFragment fragment = new RosterFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            this.nombreEquipo = getArguments().getString(NOMBRE_EQUIPO).toLowerCase();
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_roster, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_roster, container, false);
+
+
+        rosterDBReference = FirebaseDatabase.getInstance().getReference().child("2016/equipo/" + nombreEquipo + "/jugador");
+
+        mRosterRecyclerView = (RecyclerView) rootView.findViewById(R.id.roster_list);
+
+        mRosterRecyclerView.setHasFixedSize(true);
+
+        mRosterRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        FirebaseRecyclerAdapter<Jugador, RosterViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Jugador, RosterViewHolder>(Jugador.class, R.layout.row_player, RosterViewHolder.class, rosterDBReference) {
+            @Override
+            protected void populateViewHolder(RosterViewHolder viewHolder, Jugador jugador, int position) {
+
+                String fullName = jugador.getNombre().substring(0, 1).toUpperCase() + jugador.getNombre().substring(1).toLowerCase();
+                fullName = fullName.concat(" ");
+                fullName = fullName.concat(jugador.getApellidoPaterno().substring(0, 1) + jugador.getApellidoPaterno().substring(1).toLowerCase());
+
+                viewHolder.setPlayerName(fullName);
+
+                viewHolder.setPlayerNumber(jugador.getNumero());
+                viewHolder.setPlayerPosition(jugador.getPosicion());
+                viewHolder.setPlayerHeight(jugador.getEstatura());
+                viewHolder.setPlayerWeight(jugador.getPeso());
+
+            }
+
+            @Override
+            public RosterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                switch (viewType) {
+                    case PER:
+                        View viewPer = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_player, parent, false);
+                        viewPer.setBackgroundColor(getResources().getColor(R.color.rojo_transparente_light));
+                        return new RosterViewHolder(viewPer);
+                    case UNEVEN:
+                        View viewUneven = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_player, parent, false);
+                        return new RosterViewHolder(viewUneven);
+                }
+
+                return super.onCreateViewHolder(parent, viewType);
+            }
+
+            @Override
+            public int getItemViewType(int position) {
+
+                int resultadoModulo = position % 2;
+                Log.v("Resultado", "" + resultadoModulo);
+                if (resultadoModulo == 0) {
+                    return PER;
+                } else {
+                    return UNEVEN;
+                }
+
+
+            }
+        };
+
+        mRosterRecyclerView.setAdapter(firebaseRecyclerAdapter);
+
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        mRosterRecyclerView.setLayoutManager(llm);
+
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

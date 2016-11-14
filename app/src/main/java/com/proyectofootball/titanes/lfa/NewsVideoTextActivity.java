@@ -19,6 +19,9 @@ public class NewsVideoTextActivity extends AppCompatActivity {
     private Bundle extras;
     private Blog nota = new Blog();
 
+    private static final String HTML_HEADER = "<html><body>";
+    private static final String HTML__FOTTER = "</body></html>";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +73,7 @@ public class NewsVideoTextActivity extends AppCompatActivity {
         nota.setTextoNota(extras.getString(NOTA));
         nota.setVideoNota(extras.getString(VIDEO));
 
-        videoWebView.loadUrl(nota.getVideoNota());
+        videoWebView.loadData(HTML_HEADER + nota.getVideoNota() + HTML__FOTTER, "text/html; charset=utf-8", "UTF-8");
         textWebView.loadData(nota.getTextoNota(), "text/html; charset=UTF-8", null);
 
 

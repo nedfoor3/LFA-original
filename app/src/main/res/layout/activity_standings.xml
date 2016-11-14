@@ -4,209 +4,355 @@
     android:layout_height="match_parent"
     tools:context="com.proyectofootball.titanes.lfa.Standings">
 
-   <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/horizontalScrollView" >
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Standings">
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="12dp">
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView">
 
-            <TableRow
+            <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/negro">
-                <TextView android:text="Lugar"
-                    android:paddingLeft="6dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="Equipo"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="JJ"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="JG"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="JP"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="JE"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="PTJE"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="P+"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="P-"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="DIF"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="AVG"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-                <TextView android:text="  "
-                    android:paddingLeft="4dp"
-                    android:paddingRight="6dp"
-                    android:textColor="@color/blanco"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
+                android:layout_margin="12dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/negro">
+
+                    <TextView
+                        android:text="Lugar"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="Equipo"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="JJ"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="JG"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="JP"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="JE"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="PTJE"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="P+"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="P-"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="DIF"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="AVG"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="  "
+                        android:paddingLeft="4dp"
+                        android:paddingRight="6dp"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold" />
                 </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView android:text="1"
-                    android:gravity="center"/>
-                <TextView android:text="@string/mayas"
-                    android:gravity="center"/>
-                <TextView android:text="6"
-                    android:gravity="center"/>
-                <TextView android:text="4"
-                    android:gravity="center"/>
-                <TextView android:text="2"
-                    android:gravity="center"/>
-                <TextView android:text="0"
-                    android:gravity="center"/>
-                <TextView android:text=".666"
-                    android:gravity="center"/>
-                <TextView android:text="158"
-                    android:gravity="center"/>
-                <TextView android:text="99"
-                    android:gravity="center"/>
-                <TextView android:text="59"
-                    android:gravity="center"/>
-                <TextView android:text="1.595"
-                    android:gravity="center"/>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView android:text="2"
-                    android:gravity="center" />
-                <TextView android:text="@string/raptors"
-                    android:gravity="center"/>
-                <TextView android:text="6"
-                    android:gravity="center"/>
-                <TextView android:text="4"
-                    android:gravity="center"/>
-                <TextView android:text="2"
-                    android:gravity="center"/>
-                <TextView android:text="0"
-                    android:gravity="center"/>
-                <TextView android:text=".666"
-                    android:gravity="center"/>
-                <TextView android:text="139"
-                    android:gravity="center"/>
-                <TextView android:text="124"
-                    android:gravity="center"/>
-                <TextView android:text="14"
-                    android:gravity="center"/>
-                <TextView android:text="1.120"
-                    android:gravity="center"/>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView android:text="3"
-                    android:gravity="center" />
-                <TextView android:text="@string/eagles"
-                    android:gravity="center"/>
-                <TextView android:text="6"
-                    android:gravity="center"/>
-                <TextView android:text="3"
-                    android:gravity="center"/>
-                <TextView android:text="3"
-                    android:gravity="center"/>
-                <TextView android:text="0"
-                    android:gravity="center"/>
-                <TextView android:text=".500"
-                    android:gravity="center"/>
-                <TextView android:text="136"
-                    android:gravity="center"/>
-                <TextView android:text="139"
-                    android:gravity="center"/>
-                <TextView android:text="-3"
-                    android:gravity="center"/>
-                <TextView android:text="0.978"
-                    android:gravity="center"/>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView android:text="4"
-                    android:gravity="center" />
-                <TextView android:text="@string/condors"
-                    android:gravity="center"/>
-                <TextView android:text="6"
-                    android:gravity="center"/>
-                <TextView android:text="1"
-                    android:gravity="center"/>
-                <TextView android:text="5"
-                    android:gravity="center"/>
-                <TextView android:text="0"
-                    android:gravity="center"/>
-                <TextView android:text=".166"
-                    android:gravity="center"/>
-                <TextView android:text="102"
-                    android:gravity="center"/>
-                <TextView android:text="173"
-                    android:gravity="center"/>
-                <TextView android:text="-71"
-                    android:gravity="center"/>
-                <TextView android:text="0.589"
-                    android:gravity="center"/>
-            </TableRow>
-        </TableLayout>
-    </HorizontalScrollView>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="@string/mayas"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="6"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="4"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="2"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text=".666"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="158"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="99"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="59"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="1.595"
+                        android:gravity="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="2"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="@string/raptors"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="6"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="4"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="2"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text=".666"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="139"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="124"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="14"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="1.120"
+                        android:gravity="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="3"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="@string/eagles"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="6"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="3"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="3"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text=".500"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="136"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="139"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="-3"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="0.978"
+                        android:gravity="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="4"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="@string/condors"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="6"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="5"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="0"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text=".166"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="102"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="173"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="-71"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="0.589"
+                        android:gravity="center" />
+                </TableRow>
+            </TableLayout>
+        </HorizontalScrollView>
+
+        <ListView
+            android:id="@+id/lv_sliding_menu"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@color/verde_logo_lfa"
+            android:choiceMode="singleChoice"></ListView>
+    </android.support.v4.widget.DrawerLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/verde_logo_lfa">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_lfa_sin_texto" />
+    </android.support.v7.widget.Toolbar>
+
 </RelativeLayout>

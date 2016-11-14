@@ -83,8 +83,8 @@ public class TeamsDetailActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
-        viewPager = (ViewPager) findViewById(R.id.pager);
-        adapter = new DetailsTeamPagerAdapter(getSupportFragmentManager(), this);
+        viewPager = (ViewPager) findViewById(R.id.viewPager_datos_complementarios);
+        adapter = new DetailsTeamPagerAdapter(getSupportFragmentManager(), this, this.nombreEquipo);
 
         viewPager.setAdapter(adapter);
 
@@ -111,7 +111,10 @@ public class TeamsDetailActivity extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(viewPager);
 
-
+        /*for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            tab.setCustomView(adapter.getTabView(this, i));
+        }*/
     }
 
     /**

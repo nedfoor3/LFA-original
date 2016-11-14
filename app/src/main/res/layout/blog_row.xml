@@ -1,58 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_news"
     android:layout_width="match_parent"
-    android:layout_marginTop="3dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
-    android:background="@color/blanco"
     android:layout_height="wrap_content"
-    android:id="@+id/card_news">
+    android:layout_marginBottom="2dp"
+    android:orientation="vertical">
 
-    <LinearLayout
+
+    <ImageView
+        android:id="@+id/post_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:adjustViewBounds="true"
+        android:background="@color/blanco"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_stat_silueta_logo_para_notificacion" />
+
+
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="1dp"
-        android:background="@color/rojo_logo_lfa"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/post_image"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:background="@color/blanco"
-            android:src="@drawable/ic_stat_silueta_logo_para_notificacion"/>
+        android:layout_alignBottom="@+id/post_image"
+        android:background="@color/blanco_transparente">
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/post_title"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/negro"
-            android:text="el titulo va aqui"
-            android:background="@color/blanco"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="15dp" />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/rojo_logo_lfa"></RelativeLayout>
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/post_text"
-            android:background="@color/blanco"
-            android:textColor="@color/negro"
-            android:text="nota va aqui"
+            android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:paddingBottom="15dp"
+            android:text="el titulo va aqui"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/post_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="2" />
+            android:maxLines="2"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="nota va aqui"
+            android:textColor="@color/negro" />
 
-    </LinearLayout>
+    </TableLayout>
 
-</android.support.v7.widget.CardView>
+</RelativeLayout>

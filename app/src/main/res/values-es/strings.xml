@@ -51,4 +51,11 @@
     <string name="estatus_pendiente">P</string>
     <string name="sin_fecha">Sin fecha disponible</string>
     <string name="jugando_texto">Jugando</string>
+
+    <string name="name_string">Nombre</string>
+    <string name="position_string">Pos</string>
+
+    <string name="height_string">Estatura</string>
+
+    <string name="weight_string">Peso</string>
 </resources>
