@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -27,16 +28,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TeamsActivity" />
-        <activity android:name=".Preferencias" />
-        <activity android:name=".AcercaDe" />
-        <activity android:name=".Standings" />
-        <activity android:name=".ParaPruebas" />
-        <activity android:name=".CalendarioActivity" />
-        <activity android:name=".TeamsDetailActivity" />
-        <activity android:name=".NewsTextActivity" />
-        <activity android:name=".NewsVideoTextActivity" />
-        <activity android:name=".NewsVideoActivity" />
+        <activity
+            android:name=".TeamsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Preferencias"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AcercaDe"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Standings"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ParaPruebas"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CalendarioActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TeamsDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NewsTextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NewsVideoTextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NewsVideoActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

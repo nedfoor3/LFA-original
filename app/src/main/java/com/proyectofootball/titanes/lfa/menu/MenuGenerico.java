@@ -106,20 +106,34 @@ public class MenuGenerico extends AppCompatActivity {
     private void changeActivity(int pos, Activity activity) {
         switch (pos) {
             case 0:
-                Intent noticiasPrincipalesIntent = new Intent(activity, MainActivity.class);
-                activity.startActivity(noticiasPrincipalesIntent);
+
+                if (activity.getClass() != MainActivity.class) {
+                    Intent noticiasPrincipalesIntent = new Intent(activity, MainActivity.class);
+                    activity.startActivity(noticiasPrincipalesIntent);
+                }
+
                 break;
             case 1:
-                Intent detalleEquiposIntent = new Intent(activity, TeamsActivity.class);
-                activity.startActivity(detalleEquiposIntent);
+                if (activity.getClass() != TeamsActivity.class) {
+                    Intent detalleEquiposIntent = new Intent(activity, TeamsActivity.class);
+                    activity.startActivity(detalleEquiposIntent);
+                }
+
                 break;
             case 2:
-                Intent intentCalendario = new Intent(activity, CalendarioActivity.class);
-                activity.startActivity(intentCalendario);
+                if (activity.getClass() != CalendarioActivity.class) {
+                    Intent intentCalendario = new Intent(activity, CalendarioActivity.class);
+                    activity.startActivity(intentCalendario);
+                }
+
+
                 break;
             case 3:
-                Intent standingsIntent = new Intent(activity, Standings.class);
-                activity.startActivity(standingsIntent);
+                if (activity.getClass() != Standings.class) {
+                    Intent standingsIntent = new Intent(activity, Standings.class);
+                    activity.startActivity(standingsIntent);
+                }
+
                 break;
             case 4:
                 break;
@@ -127,12 +141,18 @@ public class MenuGenerico extends AppCompatActivity {
                 downloadRulesPDF();
                 break;
             case 6:
-                Intent acercaDeIntent = new Intent(activity, AcercaDe.class);
-                activity.startActivity(acercaDeIntent);
+                if (activity.getClass() != AcercaDe.class) {
+                    Intent acercaDeIntent = new Intent(activity, AcercaDe.class);
+                    activity.startActivity(acercaDeIntent);
+                }
+
                 break;
             case 7:
-                Intent preferenciasIntent = new Intent(activity, ParaPruebas.class);
-                activity.startActivity(preferenciasIntent);
+                if (activity.getClass() != ParaPruebas.class) {
+                    Intent preferenciasIntent = new Intent(activity, ParaPruebas.class);
+                    activity.startActivity(preferenciasIntent);
+                }
+
                 break;
         }
 
