@@ -16,13 +16,14 @@
             android:id="@+id/relativeAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/blog_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:background="@color/verde_logo_lfa_transparente"
-            android:layout_above="@+id/adView"></android.support.v7.widget.RecyclerView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/blog_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/adView"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:background="@color/verde_logo_lfa_transparente"></android.support.v7.widget.RecyclerView>
 
 
             <com.google.android.gms.ads.AdView

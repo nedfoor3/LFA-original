@@ -8,73 +8,81 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
         android:background="@color/negro"
         tools:context="com.proyectofootball.">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rawr_studio"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/contacto_rawr"
-            android:layout_below="@+id/tv_develop"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/blanco"
-            android:textSize="35dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/silueta_rawr">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/developed_by"
-            android:id="@+id/tv_develop"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/blanco"
-            android:layout_marginBottom="6dp"
-            android:textSize="30dp"/>
+            <TextView
+                android:id="@+id/contacto_rawr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_develop"
+                android:layout_centerHorizontal="true"
+                android:text="@string/rawr_studio"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/blanco"
+                android:textSize="35dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/iv_logo_head"
-            android:src="@drawable/logo_head"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            android:layout_above="@+id/textView2"
-            android:layout_centerHorizontal="true" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:rotation="-12"
-            android:layout_below="@+id/textView2" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/acerca_de_texto"
-            android:id="@+id/textView2"
-            android:textColor="@color/blanco"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"/>
+            <TextView
+                android:id="@+id/tv_develop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:text="@string/developed_by"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/blanco"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:textSize="30dp" />
 
-        <ImageView
-            android:id="@+id/imagen_logo_titan"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_titan"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"/>
+            <ImageView
+                android:id="@+id/iv_logo_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textView2"
+                android:layout_centerHorizontal="true"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/logo_head" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView2"
+                android:rotation="-12" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="16dp"
+                android:text="@string/acerca_de_texto"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:textColor="@color/blanco" />
+
+            <ImageView
+                android:id="@+id/imagen_logo_titan"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_titan"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin" />
 
 
+        </RelativeLayout>
     </RelativeLayout>
-
 </FrameLayout>

@@ -81,7 +81,7 @@ public class TeamsDetailActivity extends AppCompatActivity {
         this.perdidos = extras.getString(PARTIDOS_PERDIDOS);
         this.empatados = extras.getString(PARTIDOS_EMPATADOS);
 
-        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout = (TabLayout) findViewById(R.id.tab_layout_calendario_roster);
 
         viewPager = (ViewPager) findViewById(R.id.viewPager_datos_complementarios);
         adapter = new DetailsTeamPagerAdapter(getSupportFragmentManager(), this, this.nombreEquipo);
