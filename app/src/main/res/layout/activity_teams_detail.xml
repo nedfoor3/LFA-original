@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             ads:adSize="BANNER"
-            ads:adUnitId="@string/test_ad_unit_id" />
+            ads:adUnitId="@string/teams_detail_banner_unit_id" />
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

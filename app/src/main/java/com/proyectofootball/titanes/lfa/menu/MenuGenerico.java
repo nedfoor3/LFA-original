@@ -24,6 +24,7 @@ import com.proyectofootball.titanes.lfa.MainActivity;
 import com.proyectofootball.titanes.lfa.ParaPruebas;
 import com.proyectofootball.titanes.lfa.R;
 import com.proyectofootball.titanes.lfa.Standings;
+import com.proyectofootball.titanes.lfa.StatisticsActivity;
 import com.proyectofootball.titanes.lfa.TeamsActivity;
 import com.proyectofootball.titanes.lfa.adapter.SlidingMenuAdapter;
 import com.proyectofootball.titanes.lfa.model.ItemSlideMenu;
@@ -136,7 +137,10 @@ public class MenuGenerico extends AppCompatActivity {
 
                 break;
             case 4:
-
+                if (activity.getClass() != StatisticsActivity.class) {
+                    Intent statisticsIntent = new Intent(activity, StatisticsActivity.class);
+                    activity.startActivity(statisticsIntent);
+                }
                 break;
 
             case 5:

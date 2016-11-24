@@ -4,7 +4,7 @@
         <item>@string/espannol</item>
         <item>@string/ingles</item>
     </string-array>
-    <string-array name="lenguajesOrden">
+    <string-array name="lenguajesOrden" translatable="false">
         <item>0</item>
         <item>1</item>
     </string-array>

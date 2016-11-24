@@ -6,7 +6,10 @@
     android:layout_marginTop="3dp"
     android:background="@color/blanco"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="0dp">
+    app:cardCornerRadius="0dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <TableLayout
         android:layout_width="match_parent"

@@ -1,18 +1,21 @@
 <resources>
     <string name="app_name">LFA</string>
 
-    <string name="unit_id">ca-app-pub-2537333932314106~6678440077</string>
-    <string name="test_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="main_unit_id">ca-app-pub-2537333932314106/8155173270</string>
-    <string name="news_detail_unit_id">ca-app-pub-2537333932314106/5062106075</string>
-    <string name="news_only_video_banner_unit_id">ca-app-pub-2537333932314106/2892212079</string>
-    <string name="news_video_text_banner_unit_id">ca-app-pub-2537333932314106/8799144876</string>
+    <string name="unit_id" translatable="false">ca-app-pub-2537333932314106~6678440077</string>
+    <string name="test_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="main_unit_id" translatable="false">ca-app-pub-2537333932314106/8155173270</string>
+    <string name="news_detail_unit_id" translatable="false">ca-app-pub-2537333932314106/5062106075</string>
+    <string name="news_only_video_banner_unit_id" translatable="false">ca-app-pub-2537333932314106/2892212079</string>
+    <string name="news_video_text_banner_unit_id" translatable="false">ca-app-pub-2537333932314106/8799144876</string>
 
 
-    <string name="teams_intersticial_unit_id">ca-app-pub-2537333932314106/1829438076</string>
-    <string name="teams_banner_unit_id">ca-app-pub-2537333932314106/3306171279</string>
-    <string name="teams_detail_banner_unit_id">ca-app-pub-2537333932314106/4782904478</string>
+    <string name="teams_intersticial_unit_id" translatable="false">ca-app-pub-2537333932314106/1829438076</string>
+    <string name="teams_banner_unit_id" translatable="false">ca-app-pub-2537333932314106/3306171279</string>
+    <string name="teams_detail_banner_unit_id" translatable="false">ca-app-pub-2537333932314106/4782904478</string>
 
+    <string name="standings_unit_id" translatable="false">ca-app-pub-2537333932314106/1576061675</string>
+
+    <string name="calendar_unit_id" translatable="false">ca-app-pub-2537333932314106/9099328478</string>
 
     <string name="empty" translatable="false"></string>
     <string name="empty_team_name">Name not found</string>
@@ -48,7 +51,7 @@
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="title_activity_detalle_equipos" translatable="false">DetalleEquipos</string>
     <string name="developed_by">Developed by:</string>
-    <string name="rawr_studio">Rawr Studio</string>
+    <string name="rawr_studio" translatable="false">Rawr Studio</string>
     <string name="probando">Testing</string>
     <string name="large_text" translatable="false">
         "Material is the metaphor.\n\n"
@@ -148,7 +151,7 @@
     <string name="final_texto" translatable="false">final</string>
     <string name="jugando_texto">Playing</string>
 
-    <string name="abreviature_number">No.</string>
+    <string name="abreviature_number" translatable="false">No.</string>
     <string name="name_string">Name</string>
 
     <string name="position_string">Pos</string>

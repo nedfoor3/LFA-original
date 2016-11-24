@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="correo_soporte_rawr">"soporte@rawrstudio.com</string>
-    <string name="lfa_web">www.lfa.mx</string>
+    <string name="correo_soporte_rawr" translatable="false">"soporte@rawrstudio.com</string>
+    <string name="lfa_web" translatable="false">www.lfa.mx</string>
 
 </resources>

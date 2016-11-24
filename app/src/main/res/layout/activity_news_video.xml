@@ -21,5 +21,5 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/test_ad_unit_id" />
+        ads:adUnitId="@string/news_only_video_banner_unit_id" />
 </RelativeLayout>

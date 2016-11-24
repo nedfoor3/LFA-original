@@ -1,65 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_estadisticas"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/blanco">
 
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_marginTop="?attr/actionBarSize">
 
-        <RelativeLayout
-            android:id="@+id/relativeAdd"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/main_toolbar"
+            android:padding="2dp">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/blog_list"
+            <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@+id/adView"
-                android:layout_marginTop="?attr/actionBarSize"
-                android:background="@color/verde_logo_lfa_transparente"></android.support.v7.widget.RecyclerView>
+                android:layout_alignParentStart="true"
+                app:srcCompat="@drawable/teams_lfa_2017" />
 
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/main_unit_id"></com.google.android.gms.ads.AdView>
-        </RelativeLayout>
+                android:padding="100dp"
+                app:srcCompat="@drawable/pag_construccion" />
+
+
+        </FrameLayout>
 
         <ListView
             android:id="@+id/lv_sliding_menu"
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:layout_marginTop="?attr/actionBarSize"
             android:background="@color/verde_logo_lfa"
             android:choiceMode="singleChoice"></ListView>
-
-
     </android.support.v4.widget.DrawerLayout>
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="6dp"
         android:background="@color/verde_logo_lfa">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/logo_lfa_sin_texto" />
-
     </android.support.v7.widget.Toolbar>
-
 
 </RelativeLayout>
